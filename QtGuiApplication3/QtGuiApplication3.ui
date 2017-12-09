@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtGuiApplication3Class</class>
+ <widget class="QMainWindow" name="QtGuiApplication3Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>QtGuiApplication3</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="m_lvl2">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>270</y>
+      <width>41</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p2_avatar">
+    <property name="geometry">
+     <rect>
+      <x>1084</x>
+      <y>285</y>
+      <width>161</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p1_total">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>300</y>
+      <width>71</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p2_badstuff">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>180</y>
+      <width>91</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p1_avatar">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>260</y>
+      <width>171</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/SemesterProjectGUI/soerenyes.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p1_badstuff">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>-30</y>
+      <width>91</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p1_lvl">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>140</y>
+      <width>91</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p1_attack">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>230</y>
+      <width>71</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p2_total">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>190</y>
+      <width>71</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="m_background">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>240</y>
+      <width>221</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Pictures/GUI_Pics/GifBackground90c.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="monster_gif">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>240</y>
+      <width>221</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/SemesterProjectGUI/empty.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p2_lvl">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>340</y>
+      <width>55</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>1280</width>
+      <height>741</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1280</width>
+      <height>741</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Pictures/GUI_Pics/Background8.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p2_attack">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>250</y>
+      <width>55</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="m_lvl1">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>180</y>
+      <width>81</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <zorder>background</zorder>
+   <zorder>m_background</zorder>
+   <zorder>p2_total</zorder>
+   <zorder>p2_lvl</zorder>
+   <zorder>p2_badstuff</zorder>
+   <zorder>p2_avatar</zorder>
+   <zorder>p2_attack</zorder>
+   <zorder>p1_total</zorder>
+   <zorder>p1_lvl</zorder>
+   <zorder>p1_badstuff</zorder>
+   <zorder>p1_avatar</zorder>
+   <zorder>p1_attack</zorder>
+   <zorder>monster_gif</zorder>
+   <zorder>m_lvl2</zorder>
+   <zorder>m_lvl1</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="QtGuiApplication3.qrc"/>
+ </resources>
+ <connections/>
+</ui>

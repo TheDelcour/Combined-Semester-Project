@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="QtGuiApplication3"/>
+  <qresource prefix="Pictures">
+    <file>GUI_Pics/angry_germanC.gif</file>
+    <file>GUI_Pics/angry_germanCC.gif</file>
+    <file>GUI_Pics/Background8.png</file>
+    <file>GUI_Pics/cardboard_manC.gif</file>
+    <file>GUI_Pics/cardboard_manCC.gif</file>
+    <file>GUI_Pics/empty.png</file>
+    <file>GUI_Pics/GifBackground90c.png</file>
+    <file>GUI_Pics/GifBackgroundcc.png</file>
+    <file>GUI_Pics/lizardC.gif</file>
+    <file>GUI_Pics/lizardCC.gif</file>
+    <file>GUI_Pics/pholder2.gif</file>
+    <file>GUI_Pics/soerenyes.png</file>
+  </qresource>
+</RCC>
