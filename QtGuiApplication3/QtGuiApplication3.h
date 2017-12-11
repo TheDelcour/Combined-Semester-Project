@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QPicture>
 #include <QObject>
+#include "ImageProcessing.h"
 
 class QtGuiApplication3 : public QMainWindow
 {
@@ -13,9 +14,10 @@ class QtGuiApplication3 : public QMainWindow
 public:
 	QtGuiApplication3(QWidget *parent = Q_NULLPTR);
 	int monsterPlayed = 1;
-	int turn = 2;
+	int turn;
 	int p1Attack;
 	int p1Lvl;
+	ImageProcessing ipRef;
 	void drawtext(QString s, int degree, QPicture qp){
 		QFont font;
 		font.setPixelSize(25);

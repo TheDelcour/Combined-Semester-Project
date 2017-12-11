@@ -82,6 +82,7 @@
     <ClCompile Include="GeneratedFiles\Release\moc_QtGuiApplication3.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ImageProcessing.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -118,6 +119,7 @@
   <ItemGroup>
     <ClInclude Include="blobDetection.h" />
     <ClInclude Include="Fight.h" />
+    <ClInclude Include="ImageProcessing.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Seperation.h" />
