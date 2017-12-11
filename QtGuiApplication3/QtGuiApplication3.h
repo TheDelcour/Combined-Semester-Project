@@ -13,11 +13,21 @@ class QtGuiApplication3 : public QMainWindow
 
 public:
 	QtGuiApplication3(QWidget *parent = Q_NULLPTR);
-	int monsterPlayed = 1;
+	ImageProcessing ipRef;
+	int monsterPlayed;
 	int turn;
 	int p1Attack;
 	int p1Lvl;
-	ImageProcessing ipRef;
+	int p2Lvl;
+	int p2Attack;
+	int monsLvl;
+	int classP1;
+	int classP2;
+	int itemsP1;
+	int itemsP2;
+	bool nextTurn;
+	string badStuff;
+
 	void drawtext(QString s, int degree, QPicture qp){
 		QFont font;
 		font.setPixelSize(25);
@@ -32,6 +42,8 @@ public:
 
 public slots:
 	void UpdateP1Lvl();
+	void UpdateMonster();
+	void UpdateClass();
 
 private:
 	Ui::QtGuiApplication3Class ui;

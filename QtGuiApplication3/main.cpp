@@ -9,17 +9,16 @@
 using namespace cv;
 using namespace std;
 
-ImageProcessing ip;
 
 int main(int argc, char *argv[])
 {
-	thread t1(&ImageProcessing::ImageProcessing1,ip);
 	QApplication a(argc, argv);
 	QtGuiApplication3 w;
+	ImageProcessing ip = ImageProcessing();
 	w.ipRef = ip;
+	thread t1(&ImageProcessing::ImageProcessing1, &w.ipRef);
 	//w.ipThingy = ip;
 	w.show();
-	//w.UpdateP1Lvl(p1Lvl);
 	return a.exec();
 	t1.join();
 }

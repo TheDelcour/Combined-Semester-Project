@@ -26,8 +26,11 @@ public:
 	int p2Lvl;
 	int p2Attack;
 	int monsLvl;
-	int itemsP1;
 	int classP1;
+	int classP2;
+	int itemsP1;
+	int itemsP2;
 	bool nextTurn;
+	string badStuff;
 };
 

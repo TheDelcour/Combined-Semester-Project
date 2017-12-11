@@ -21,6 +21,8 @@ extern vector<Mat> List_Template_Pool3{ tpl1, tpl2, tpl3, tpl4, tpl5, tpl6, tpl7
 
 ImageProcessing::ImageProcessing()
 {
+	classP1 = 3;
+	itemsP1 = 5;
 }
 
 
@@ -51,9 +53,6 @@ void ImageProcessing::ImageProcessing1(){
 		flip(im2, im2, 0);
 		cvtColor(im2, im3, CV_BGR2GRAY);
 		GaussianBlur(im3, im, Size(15, 15), 3, 3);
-
-		p1Attack = 1;
-		p1Lvl = 2;
 
 		Mat img = im;
 		Mat img2 = im;
@@ -154,72 +153,68 @@ void ImageProcessing::ImageProcessing1(){
 		blobDetection blobDetect5 = blobDetection(sepBlobDetect5.sepIm, 58, 100, false, true);
 		blobDetection blobDetect6 = blobDetection(sepBlobDetect6.sepIm, 32, 65, false, true);
 
-		if (blobDetect.blobeffect() == false){
-			cout << "Fight" << endl;
-			fight.Fighting(p1Attack, monsLvl, p1Lvl);
-		}
+		//if (blobDetect.blobeffect() == false){
+		//	cout << "Fight" << endl;
+		//	fight.Fighting(p1Attack, monsLvl, p1Lvl);
+		//}
 
-		if (blobDetect2.blobeffect() == false){
-			cout << "Turn" << endl;
-			turn = 1;
-			nextTurn = true;
-		}
+		//if (blobDetect2.blobeffect() == false){
+		//	cout << "Turn" << endl;
+		//	turn = 1;
+		//	nextTurn = true;
+		//}
 
-		if (blobDetect3.blobeffect() == false){
-			cout << "Run" << endl;
-			p1Lvl = p1Lvl - 1;
-		}
-
-
-		//Player two buttons Turn, Fight, Run
-		if (blobDetect4.blobeffect() == true){
-			cout << "Fight P2";
-			fight.Fighting(p2Attack, monsLvl, p2Lvl);
-		}
-
-		if (blobDetect5.blobeffect() == true){
-			cout << "Turn P2" << endl;
-			turn = 2;
-			nextTurn = true;
-		}
-
-		if (blobDetect6.blobeffect() == true){
-			cout << "Run P2" << endl;
-			p2Lvl = p2Lvl - 1;
-		}
+		//if (blobDetect3.blobeffect() == false){
+		//	cout << "Run" << endl;
+		//	//p1Lvl = p1Lvl - 1;
+		//}
 
 
-		//p1Attack = combiner.CalculateMunchkinAttack(tempGearP1, tempGear1P1, tempMunchkinP1, tempMunchkinP2);
-		//p1Lvl = player1.getLvl();*/
-		//std::cout << "p1 attack:" << player1.getAttack() << "     ";
+		////Player two buttons Turn, Fight, Run
+		//if (blobDetect4.blobeffect() == true){
+		//	cout << "Fight P2";
+		//	fight.Fighting(p2Attack, monsLvl, p2Lvl);
+		//}
 
-		//int p2att = combiner.CalculateMunchkinAttack(tempGearP2, tempGear1P2, tempMunchkinP1, tempMunchkinP2);
-		//int p2lvl = player2.getLvl();
-		//int p2_total = p2lvl + p2att;
-		//player2.setAttack(p2_total);
-		//std::cout << "p2 attack:" << player2.getAttack() << "     ";
+		//if (blobDetect5.blobeffect() == true){
+		//	cout << "Turn P2" << endl;
+		//	turn = 2;
+		//	nextTurn = true;
+		//}
 
-		///*monsterPlayed = monster1.ExtractMonsterTemplateId(tempMonsterP2);
-		//turn = 1;
-		//p1Attack = 2;
-		//p1Lvl = 4;*/
-		////monster1 = Monster(monsterPlayed);
-		//int monsterAtt = combiner.CalculateMonsterAttack(monster1, tempMonster1P2, tempMonster1P1);
-		//monster1.setAttack(monsterAtt);
-		//std::cout << "monster:" << monster1.getAttack() << "     ";
+		//if (blobDetect6.blobeffect() == true){
+		//	cout << "Run P2" << endl;
+		//	p2Lvl = p2Lvl - 1;
+		//}
 
-		//int classPlayedP1 = monster1.ExtractClassTemplateId(tempClassP1);
-		//int classPlayedP2 = monster1.ExtractClassTemplateId(tempClassP2);
 
-		//std::cout << "class:" << classPlayedP2 << endl;
-		//p1Lvl = 10;
+		p1Attack = combiner.CalculateMunchkinAttack(tempGearP1, tempGear1P1, tempMunchkinP1, tempMunchkinP2);
+		p1Lvl = player1.getLvl();
+		std::cout << "p1 attack:" << player1.getAttack() << "     ";
+
+		p2Attack = combiner.CalculateMunchkinAttack(tempGearP2, tempGear1P2, tempMunchkinP1, tempMunchkinP2);
+		p2Lvl = player2.getLvl();
+		std::cout << "p2 attack:" << player2.getAttack() << "     ";
+
+		/*monsterPlayed = monster1.ExtractMonsterTemplateId(tempMonsterP2);
+		turn = 1;
+		p1Attack = 2;
+		p1Lvl = 4;*/
+		//monster1 = Monster(monsterPlayed);
+		int monsterAtt = combiner.CalculateMonsterAttack(monster1, tempMonster1P2, tempMonster1P1);
+		monster1.setAttack(monsterAtt);
+		std::cout << "monster:" << monster1.getAttack() << "     ";
+
+		int classPlayedP1 = monster1.ExtractClassTemplateId(tempClassP1);
+		int classPlayedP2 = monster1.ExtractClassTemplateId(tempClassP2);
+
+		std::cout << "class:" << classPlayedP2 << endl;
 
 		/*for (int i = 0; i < 16; i++)
 		{
 		std::cout << tempGearP1.temp[i];
 		}*/
 		//std::cout << tempGear1P1.myx;
-
 
 
 
