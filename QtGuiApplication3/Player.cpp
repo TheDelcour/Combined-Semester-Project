@@ -29,3 +29,8 @@ void Player::setLvl(int newLvl){
 int Player::getLvl(){
 	return playerLvl;
 }
+
+int Player::getTotal(){
+	playerTotal = playerLvl + PlayerAtt;
+	return playerTotal;
+}

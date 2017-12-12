@@ -10,15 +10,15 @@ Fight::Fight()
 	
 }
 
-int Fight::Fighting(int PlayerDmg, int MonsterDmg, int lvl){
+int Fight::Fighting(Player p, Monster m){
 
-	if (PlayerDmg > MonsterDmg){
-		lvl + 1;
+	if (p.getTotal() > m.getAttack()){
+		p.setLvl(p.getLvl() + 1);
 	}
 	else{
-		lvl - 1;
+		p.setLvl(p.getLvl() - 1);
 	}
-	return lvl;
+	return p.getLvl();
 }
 
 

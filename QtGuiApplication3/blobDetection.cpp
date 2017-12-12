@@ -9,9 +9,9 @@ using namespace std;
 Mat im1; 
 Mat im_with_keypoints;
 vector<KeyPoint> keypoints;
-bool effect;
+int effect;
 
-blobDetection::blobDetection(Mat image, int x2, int y2, bool a, bool b)
+blobDetection::blobDetection(Mat image, int x2, int y2)
 {
 	im1 = image;
 	dilate(im1, im1, Mat(), Point(-1, -1), 2, 1, 1);
@@ -57,11 +57,11 @@ blobDetection::blobDetection(Mat image, int x2, int y2, bool a, bool b)
 	detector->detect(im1, keypoints);
 	keypoints.resize(90);
 
-	if (effect == a && keypoints[0].pt.x >= 1 && keypoints[0].pt.y >= 1 && keypoints[0].pt.x <= x2 && keypoints[0].pt.y <= y2){
-		effect = b;
+	if (effect == 0 && keypoints[0].pt.x >= 1 && keypoints[0].pt.y >= 1 && keypoints[0].pt.x <= x2 && keypoints[0].pt.y <= y2){
+		effect = 1;
 	}
 	else{
-		effect = a;
+		effect = 0;
 	}
 
 	// Draw detected blobs as red circles.

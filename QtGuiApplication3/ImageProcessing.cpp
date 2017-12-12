@@ -21,8 +21,7 @@ extern vector<Mat> List_Template_Pool3{ tpl1, tpl2, tpl3, tpl4, tpl5, tpl6, tpl7
 
 ImageProcessing::ImageProcessing()
 {
-	classP1 = 3;
-	itemsP1 = 5;
+
 }
 
 
@@ -37,6 +36,7 @@ void ImageProcessing::ImageProcessing1(){
 	Fight fight;
 	player1.setLvl(0);
 	player2.setLvl(0);
+	turn = 1;
 	VideoCapture stream1(0); //0 is the id of video device.0 if you have only one
 	TemplateCombiner1 combiner = TemplateCombiner1();
 
@@ -145,75 +145,98 @@ void ImageProcessing::ImageProcessing1(){
 		TemplateMatching tempMonster1P1 = TemplateMatching(sepMonster1P1.sepIm, List_Template_Pool1);
 		TemplateMatching tempMonster1P2 = TemplateMatching(sepMonster1P2.sepIm, List_Template_Pool2);
 
-		blobDetection blobDetect = blobDetection(sepBlobDetect.sepIm, 58, 100, true, false);
-		blobDetection blobDetect2 = blobDetection(sepBlobDetect2.sepIm, 58, 100, true, false);
-		blobDetection blobDetect3 = blobDetection(sepBlobDetect3.sepIm, 32, 65, true, false);
+		blobDetection blobDetect = blobDetection(sepBlobDetect.sepIm, 58, 100);
+		blobDetection blobDetect2 = blobDetection(sepBlobDetect2.sepIm, 58, 100);
+		blobDetection blobDetect3 = blobDetection(sepBlobDetect3.sepIm, 32, 65);
 
-		blobDetection blobDetect4 = blobDetection(sepBlobDetect4.sepIm, 58, 100, false, true);
-		blobDetection blobDetect5 = blobDetection(sepBlobDetect5.sepIm, 58, 100, false, true);
-		blobDetection blobDetect6 = blobDetection(sepBlobDetect6.sepIm, 32, 65, false, true);
-
-		//if (blobDetect.blobeffect() == false){
-		//	cout << "Fight" << endl;
-		//	fight.Fighting(p1Attack, monsLvl, p1Lvl);
-		//}
-
-		//if (blobDetect2.blobeffect() == false){
-		//	cout << "Turn" << endl;
-		//	turn = 1;
-		//	nextTurn = true;
-		//}
-
-		//if (blobDetect3.blobeffect() == false){
-		//	cout << "Run" << endl;
-		//	//p1Lvl = p1Lvl - 1;
-		//}
+		blobDetection blobDetect4 = blobDetection(sepBlobDetect4.sepIm, 58, 100);
+		blobDetection blobDetect5 = blobDetection(sepBlobDetect5.sepIm, 58, 100);
+		blobDetection blobDetect6 = blobDetection(sepBlobDetect6.sepIm, 32, 65);
 
 
-		////Player two buttons Turn, Fight, Run
-		//if (blobDetect4.blobeffect() == true){
-		//	cout << "Fight P2";
-		//	fight.Fighting(p2Attack, monsLvl, p2Lvl);
-		//}
-
-		//if (blobDetect5.blobeffect() == true){
-		//	cout << "Turn P2" << endl;
-		//	turn = 2;
-		//	nextTurn = true;
-		//}
-
-		//if (blobDetect6.blobeffect() == true){
-		//	cout << "Run P2" << endl;
-		//	p2Lvl = p2Lvl - 1;
-		//}
-
-
-		p1Attack = combiner.CalculateMunchkinAttack(tempGearP1, tempGear1P1, tempMunchkinP1, tempMunchkinP2);
+		//set variable values for the GUI 
+		player1.setAttack(combiner.CalculateMunchkinAttack(tempGearP1, tempGear1P1, tempMunchkinP1, tempMunchkinP2));
+		p1Attack = player1.getAttack();
 		p1Lvl = player1.getLvl();
-		std::cout << "p1 attack:" << player1.getAttack() << "     ";
 
-		p2Attack = combiner.CalculateMunchkinAttack(tempGearP2, tempGear1P2, tempMunchkinP1, tempMunchkinP2);
+		player2.setAttack(combiner.CalculateMunchkinAttack(tempGearP2, tempGear1P2, tempMunchkinP1, tempMunchkinP2));
+		p2Attack = player2.getAttack();
 		p2Lvl = player2.getLvl();
-		std::cout << "p2 attack:" << player2.getAttack() << "     ";
 
-		/*monsterPlayed = monster1.ExtractMonsterTemplateId(tempMonsterP2);
-		turn = 1;
-		p1Attack = 2;
-		p1Lvl = 4;*/
-		//monster1 = Monster(monsterPlayed);
-		int monsterAtt = combiner.CalculateMonsterAttack(monster1, tempMonster1P2, tempMonster1P1);
-		monster1.setAttack(monsterAtt);
-		std::cout << "monster:" << monster1.getAttack() << "     ";
 
-		int classPlayedP1 = monster1.ExtractClassTemplateId(tempClassP1);
-		int classPlayedP2 = monster1.ExtractClassTemplateId(tempClassP2);
+		
+		if (turn == 1){
+			monsterPlayed = monster1.ExtractMonsterTemplateId(tempMonsterP1);
+		}
+		if (turn == 2){
+			monsterPlayed = monster1.ExtractMonsterTemplateId(tempMonsterP2);
+		}
 
-		std::cout << "class:" << classPlayedP2 << endl;
+		monster1 = Monster(monsterPlayed);
+		monster1.setAttack(combiner.CalculateMonsterAttack(monster1, tempMonster1P2, tempMonster1P1));
+		monsLvl = monster1.getAttack();
+		badStuff = monster1.getBadStuff();
 
-		/*for (int i = 0; i < 16; i++)
-		{
-		std::cout << tempGearP1.temp[i];
-		}*/
+		classPlayedP1 = monster1.ExtractClassTemplateId(tempClassP1);
+		classPlayedP2 = monster1.ExtractClassTemplateId(tempClassP2);
+
+		if (player1.getAttack() < 3){
+			itemsP1 = 0;
+		}
+		if (player1.getAttack() >3 && player1.getAttack()<6){
+			itemsP1 = 1;
+		}
+		if (player1.getAttack() >6 && player1.getAttack()<9){
+			itemsP1 = 2;
+		}
+		if (player1.getAttack() >9 && player1.getAttack()<12){
+			itemsP1 = 3;
+		}
+		if (player1.getAttack() >12 && player1.getAttack()<15){
+			itemsP1 = 4;
+		}
+		if (player1.getAttack() >15){
+			itemsP1 = 5;
+		}
+
+		if (blobDetect.effect == 1){
+			cout << "Fight" << endl;
+			fight.Fighting(player1, monster1);
+			p1Lvl = player1.getLvl();
+		}
+
+		if (blobDetect2.effect == 1){
+			cout << "Turn" << endl;
+			turn = 2;
+			nextTurn = true;
+		}
+
+		if (blobDetect3.effect == 1){
+			cout << "Run" << endl;
+			player1.setLvl(player1.getLvl() - 1);
+			p1Lvl = player1.getLvl();
+		}
+
+
+		//Player two buttons Turn, Fight, Run
+		if (blobDetect4.effect == 1){
+			cout << "Fight P2";
+			fight.Fighting(player2, monster1);
+			p2Lvl = player2.getLvl();
+		}
+
+		if (blobDetect5.effect == 1){
+			cout << "Turn P2" << endl;
+			turn = 1;
+			nextTurn = true;
+		}
+
+		if (blobDetect6.effect == 1){
+			cout << "Run P2" << endl;
+			player2.setLvl(player2.getLvl() - 1);
+			p2Lvl = player2.getLvl();
+		}
+
 		//std::cout << tempGear1P1.myx;
 
 

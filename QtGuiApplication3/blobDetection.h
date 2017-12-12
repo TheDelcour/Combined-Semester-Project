@@ -10,7 +10,8 @@ class blobDetection
 public:
 	Mat im_with_keypoints;
 	blobDetection();
-	blobDetection(Mat image, int x2, int y2, bool a, bool b);
+	blobDetection(Mat image, int x2, int y2);
+	int effect;
 	~blobDetection();
 	int blobeffect();
 };

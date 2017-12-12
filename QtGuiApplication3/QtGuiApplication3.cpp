@@ -10,6 +10,7 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 {
 	QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
 	QMovie *female00 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/female0.gif");
+	QMovie *background = new QMovie("C:/Users/Tobia/Desktop/FinalBackground1.png");
 	QMovie *male00 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/female0.gif");
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(UpdateP1Lvl()));
@@ -26,10 +27,13 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 	empty->start();
 	ui.p2_avatar->setMovie(male00);
 	male00->start();
+	ui.background->setMovie(background);
+	background->start();
 
 	timer->start(50);
 	timer1->start(6000);
 	timer2->start(3000);
+	QTimer::singleShot(5000, this, SLOT(showFullScreen()));
 }
 
 	void QtGuiApplication3::UpdateP1Lvl() {
@@ -39,7 +43,8 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		p2Lvl = ipRef.p2Lvl;
 		monsLvl = ipRef.monsLvl;
 		monsterPlayed = ipRef.monsterPlayed;
-		classP1 = ipRef.classP1;
+		classP1 = ipRef.classPlayedP1;
+		classP2 = ipRef.classPlayedP2;
 		turn = ipRef.turn;
 		nextTurn = ipRef.nextTurn;
 		itemsP1 = ipRef.itemsP1;
@@ -107,14 +112,12 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		QMovie *cardboard_manCC = new QMovie(":/Pictures/GUI_Pics/cardboard_manCC.gif");
 		QMovie *nextTurnP1 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/next_turnP1.png");
 		QMovie *nextTurnP2 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/next_turnP2.png");
-
-
-
-		ui.p2_avatar->setMovie(p2Avatar);
-		p2Avatar->start();
+		QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
 
 		//cases for what monster is in play 
 		switch (monsterPlayed){
+		case 0: ui.monster_gif->setMovie(empty);
+				empty->start(); break;
 		case 1: switch (turn){
 		case 1: ui.monster_gif->setMovie(cardboard_manC);
 			cardboard_manC->start(); break;
@@ -132,6 +135,36 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 			lizardC->start(); break;
 		case 2: ui.monster_gif->setMovie(lizardCC);
 			lizardCC->start(); break;
+		} break;
+		case 4: switch (turn){
+		case 1: ui.monster_gif->setMovie(cardboard_manC);
+			cardboard_manC->start(); break;
+		case 2: ui.monster_gif->setMovie(cardboard_manCC);
+			cardboard_manCC->start(); break;
+		} break;
+		case 5: switch (turn){
+		case 1: ui.monster_gif->setMovie(angry_germanC);
+			angry_germanC->start(); break;
+		case 2: ui.monster_gif->setMovie(angry_germanCC);
+			angry_germanCC->start(); break;
+		} break;
+		case 6: switch (turn){
+		case 1: ui.monster_gif->setMovie(lizardC);
+			lizardC->start(); break;
+		case 2: ui.monster_gif->setMovie(lizardCC);
+			lizardCC->start(); break;
+		} break;
+		case 7: switch (turn){
+		case 1: ui.monster_gif->setMovie(cardboard_manC);
+			cardboard_manC->start(); break;
+		case 2: ui.monster_gif->setMovie(cardboard_manCC);
+			cardboard_manCC->start(); break;
+		} break;
+		case 8: switch (turn){
+		case 1: ui.monster_gif->setMovie(angry_germanC);
+			angry_germanC->start(); break;
+		case 2: ui.monster_gif->setMovie(angry_germanCC);
+			angry_germanCC->start(); break;
 		} break;
 		}
 

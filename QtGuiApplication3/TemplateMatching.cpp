@@ -90,7 +90,7 @@ TemplateMatching::TemplateMatching(Mat image, vector<Mat>template_list)
 			cv::Point minloc, maxloc;
 			cv::minMaxLoc(dst, &minval, &maxval, &minloc, &maxloc);
 
-			if (maxval >= 0.83){
+			if (maxval >= 0.93){
 				cv::rectangle(
 					image, maxloc,
 					cv::Point(maxloc.x + template_list[i].cols, maxloc.y + template_list[i].rows),

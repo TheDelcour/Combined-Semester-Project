@@ -14,6 +14,7 @@ public:
 	string mBadStuff;
 	void Monster::setAttack(int newAttack);
 	int Monster::getAttack();
+	string getBadStuff();
 	int ExtractMonsterTemplateId(TemplateMatching monster);
 	int ExtractClassTemplateId(TemplateMatching playerClass);
 	~Monster();

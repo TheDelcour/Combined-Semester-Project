@@ -6,6 +6,7 @@ using namespace std;
 Monster::Monster(int monsterPlayed)
 {
 	switch (monsterPlayed) {
+	case 0: MonName = ""; mAttack = 0; mBadStuff = ""; break;
 	case 1: MonName = "Cardboard Man"; mAttack = 5; mBadStuff = "Lose 1 gear item, lose a level"; break;
 	case 2: MonName = "Angry German"; mAttack = 7; mBadStuff = "Lose 1 gear item, lose a level"; break;
 	case 3: MonName = "Lizard";  mAttack = 2; mBadStuff = "Lose 1 gear item, lose a level"; break;
@@ -28,6 +29,10 @@ void Monster::setAttack(int newAttack){
 
 int Monster::getAttack(){
 	return mAttack;
+}
+
+string Monster::getBadStuff(){
+	return mBadStuff;
 }
 
 int Monster::ExtractMonsterTemplateId(TemplateMatching monster) {
@@ -55,10 +60,10 @@ int Monster::ExtractClassTemplateId(TemplateMatching playerClass) {
 	{
 		if (playerClass.temp[i])
 			switch (i) {
-			case 0: classPlayed = 1; break;
-			case 1: classPlayed = 2; break;
-			case 2: classPlayed = 3; break;
-			case 3: classPlayed = 4; break;
+			case 0: classPlayed = 0; break;
+			case 1: classPlayed = 1; break;
+			case 2: classPlayed = 2; break;
+			case 3: classPlayed = 3; break;
 		}
 	}
 	return classPlayed;
