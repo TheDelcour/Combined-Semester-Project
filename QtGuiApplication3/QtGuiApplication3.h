@@ -27,6 +27,7 @@ public:
 	int itemsP2;
 	bool nextTurn;
 	string badStuff;
+	int gameOver;
 
 	void drawtext(QString s, int degree, QPicture qp){
 		QFont font;
@@ -38,7 +39,18 @@ public:
 		p.drawText(QPoint(0, 0), s);
 		p.end();
 	}
-	
+
+	void drawtext1(QString s, int degree, QPicture qp){
+		QFont font;
+		font.setPixelSize(14);
+		font.setBold(true);
+		QPainter p(&qp);
+		p.translate(40, 40);
+		p.rotate(degree);
+		p.setFont(font);
+		p.drawText(QPoint(0, 0), s);
+		p.end();
+	}
 
 public slots:
 	void UpdateP1Lvl();

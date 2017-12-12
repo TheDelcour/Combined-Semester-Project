@@ -30,6 +30,7 @@ public:
 	int classPlayedP2;
 	int itemsP1;
 	int itemsP2;
+	int gameOver;
 	bool nextTurn;
 	string badStuff;
 };

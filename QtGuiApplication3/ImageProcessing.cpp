@@ -53,7 +53,10 @@ void ImageProcessing::ImageProcessing1(){
 		flip(im2, im2, 0);
 		cvtColor(im2, im3, CV_BGR2GRAY);
 		GaussianBlur(im3, im, Size(15, 15), 3, 3);
-		nextTurn = false;
+
+		if (nextTurn == true){
+			nextTurn = false;
+		}
 
 		Mat img = im;
 		Mat img2 = im;
@@ -261,6 +264,14 @@ void ImageProcessing::ImageProcessing1(){
 			cout << "Run P2" << endl;
 			player2.setLvl(player2.getLvl() - 1);
 			p2Lvl = player2.getLvl();
+		}
+
+		if (player1.getLvl() >= 10){
+			gameOver = 1;
+		}
+
+		if (player2.getLvl() >= 10){
+			gameOver = 2;
 		}
 
 		/*tempGearP1.~TemplateMatching();

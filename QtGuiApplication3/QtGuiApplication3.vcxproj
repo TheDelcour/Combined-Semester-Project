@@ -88,6 +88,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="QtGuiApplication3.cpp" />
     <ClCompile Include="Seperation.cpp" />
+    <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="TemplateCombiner1.cpp" />
     <ClCompile Include="TemplateMatching.cpp" />
   </ItemGroup>
@@ -122,6 +123,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Seperation.h" />
+    <ClInclude Include="StartScreen.h" />
     <ClInclude Include="TemplateCombiner1.h" />
     <ClInclude Include="TemplateMatching.h" />
   </ItemGroup>
