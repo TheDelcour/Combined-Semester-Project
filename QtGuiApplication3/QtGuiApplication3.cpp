@@ -11,7 +11,7 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 	QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
 	QMovie *female00 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/female0.gif");
 	QMovie *background = new QMovie("C:/Users/Tobia/Desktop/FinalBackground1.png");
-	QMovie *male00 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/female0.gif");
+	QMovie *male00 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male0.gif");
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(UpdateP1Lvl()));
 	QTimer *timer1 = new QTimer(this);
@@ -113,6 +113,18 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		QMovie *nextTurnP1 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/next_turnP1.png");
 		QMovie *nextTurnP2 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/next_turnP2.png");
 		QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
+		QMovie *mBackgroundT1 = new QMovie(":/Pictures/GUI_Pics/GifBackground90c.png");
+		QMovie *mBackgroundT2 = new QMovie(":/Pictures/GUI_Pics/GifBackgroundcc.png");
+
+		switch (turn){
+		case 1:
+			ui.m_background->setMovie(mBackgroundT1);
+			mBackgroundT1->start(); break;
+
+		case 2: 
+			ui.m_background->setMovie(mBackgroundT2);
+			mBackgroundT2->start(); break;
+		}
 
 		//cases for what monster is in play 
 		switch (monsterPlayed){
@@ -169,17 +181,15 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		}
 
 		switch (turn){
-		case 1: if (turn = 1){
-			if (nextTurn == true){
+		case 1: if (nextTurn == true){
 				ui.monster_gif->setMovie(nextTurnP1);
 				nextTurnP1->start();
-			} break;
-		}
+				} break;
 
-		case 2:if (nextTurn == true){
-			ui.monster_gif->setMovie(nextTurnP2);
-			nextTurnP2->start();
-		} break;
+		case 2: if (nextTurn == true){
+				ui.monster_gif->setMovie(nextTurnP2);
+				nextTurnP2->start();
+				} break;
 		}
 	}
 
@@ -208,8 +218,32 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		QMovie *monkey_female3 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_female3c.gif");
 		QMovie *monkey_female4 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_female4c.gif");
 		QMovie *monkey_female5 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_female5c.gif");
+		QMovie *chow_male0 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/chow_male0.gif");
+		QMovie *chow_male1 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/chow_male1.gif");
+		QMovie *chow_male2 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/chow_male2.gif");
+		QMovie *chow_male3 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/chow_male3.gif");
+		QMovie *chow_male4 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/chow_male4.gif");
+		QMovie *chow_male5 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/chow_male5.gif");
+		QMovie *penguin_male0 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/penguin_male0.gif");
+		QMovie *penguin_male1 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/penguin_male1.gif");
+		QMovie *penguin_male2 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/penguin_male2.gif");
+		QMovie *penguin_male3 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/penguin_male3.gif");
+		QMovie *penguin_male4 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/penguin_male4.gif");
+		QMovie *penguin_male5 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/penguin_male5.gif");
+		QMovie *male0 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male0.gif");
+		QMovie *male1 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male1.gif");
+		QMovie *male2 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male2.gif");
+		QMovie *male3 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male3.gif");
+		QMovie *male4 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male4.gif");
+		QMovie *male5 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/male5.gif");
+		QMovie *monkey_male0 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_male0.gif");
+		QMovie *monkey_male1 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_male1.gif");
+		QMovie *monkey_male2 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_male2.gif");
+		QMovie *monkey_male3 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_male3.gif");
+		QMovie *monkey_male4 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_male4.gif");
+		QMovie *monkey_male5 = new QMovie("C:/Users/Tobia/Desktop/Combined-Semester-Project-master/QtGuiApplication3/GUI_Pics/monkey_male5.gif");
 
-		//cases for which class is in play + item
+		//cases for which class is in play + item p1
 		switch (classP1){
 		case 0: switch (itemsP1){
 		case 0: ui.p1_avatar->setMovie(female0);
@@ -269,6 +303,70 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 			penguin_female4->start(); break;
 		case 5: ui.p1_avatar->setMovie(penguin_female5);
 			penguin_female5->start(); break;
+		} break;
+			break;
+		}
+
+		//cases player 2 class
+		switch (classP2){
+		case 0: switch (itemsP2){
+		case 0: ui.p2_avatar->setMovie(male0);
+			male0->start(); break;
+		case 1: ui.p2_avatar->setMovie(male1);
+			male1->start(); break;
+		case 2: ui.p2_avatar->setMovie(male2);
+			male2->start(); break;
+		case 3: ui.p2_avatar->setMovie(male3);
+			male3->start(); break;
+		case 4: ui.p2_avatar->setMovie(male4);
+			male4->start(); break;
+		case 5: ui.p2_avatar->setMovie(male5);
+			male5->start(); break;
+		} break;
+
+		case 1: switch (itemsP2){
+		case 0: ui.p2_avatar->setMovie(chow_male0);
+			chow_male0->start(); break;
+		case 1: ui.p2_avatar->setMovie(chow_male1);
+			chow_male1->start(); break;
+		case 2: ui.p2_avatar->setMovie(chow_male2);
+			chow_male2->start(); break;
+		case 3: ui.p2_avatar->setMovie(chow_male3);
+			chow_male3->start(); break;
+		case 4: ui.p2_avatar->setMovie(chow_male4);
+			chow_male4->start(); break;
+		case 5: ui.p2_avatar->setMovie(chow_male5);
+			chow_male5->start(); break;
+		} break;
+
+		case 2: switch (itemsP2){
+		case 0: ui.p2_avatar->setMovie(monkey_male0);
+			monkey_male0->start(); break;
+		case 1: ui.p2_avatar->setMovie(monkey_male1);
+			monkey_male1->start(); break;
+		case 2: ui.p2_avatar->setMovie(monkey_male2);
+			monkey_male2->start(); break;
+		case 3: ui.p2_avatar->setMovie(monkey_male3);
+			monkey_male3->start(); break;
+		case 4: ui.p2_avatar->setMovie(monkey_male4);
+			monkey_male4->start(); break;
+		case 5: ui.p2_avatar->setMovie(monkey_male5);
+			monkey_male5->start(); break;
+		} break;
+
+		case 3: switch (itemsP2){
+		case 0: ui.p2_avatar->setMovie(penguin_male0);
+			penguin_male0->start(); break;
+		case 1: ui.p2_avatar->setMovie(penguin_male1);
+			penguin_male1->start(); break;
+		case 2: ui.p2_avatar->setMovie(penguin_male2);
+			penguin_male2->start(); break;
+		case 3: ui.p2_avatar->setMovie(penguin_male3);
+			penguin_male3->start(); break;
+		case 4: ui.p2_avatar->setMovie(penguin_male4);
+			penguin_male4->start(); break;
+		case 5: ui.p2_avatar->setMovie(penguin_male5);
+			penguin_male5->start(); break;
 		} break;
 			break;
 		}

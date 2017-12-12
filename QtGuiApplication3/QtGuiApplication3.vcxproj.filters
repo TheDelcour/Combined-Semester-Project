@@ -67,9 +67,6 @@
     <ClCompile Include="Seperation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TemplateCombiner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TemplateCombiner1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -102,9 +99,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Seperation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TemplateCombiner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TemplateCombiner1.h">
