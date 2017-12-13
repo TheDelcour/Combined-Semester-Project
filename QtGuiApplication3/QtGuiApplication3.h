@@ -25,7 +25,6 @@ public:
 	int classP2;
 	int itemsP1;
 	int itemsP2;
-	bool nextTurn;
 	string badStuff;
 	int gameOver;
 
@@ -37,6 +36,7 @@ public:
 		p.rotate(degree);
 		p.setFont(font);
 		p.drawText(QPoint(0, 0), s);
+		p.save();
 		p.end();
 	}
 
@@ -49,6 +49,7 @@ public:
 		p.rotate(degree);
 		p.setFont(font);
 		p.drawText(QPoint(0, 0), s);
+		p.save();
 		p.end();
 	}
 

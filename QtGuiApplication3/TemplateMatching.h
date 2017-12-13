@@ -11,7 +11,7 @@ public:
 	bool temp[16];
 	int myx;
 	TemplateMatching();
-	TemplateMatching(Mat image, vector<Mat>template_list);
+	TemplateMatching(Mat image, vector<Mat>template_list, double maxVal);
 	~TemplateMatching();
 };
 

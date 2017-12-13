@@ -31,7 +31,6 @@ public:
 	int itemsP1;
 	int itemsP2;
 	int gameOver;
-	bool nextTurn;
 	string badStuff;
 };
 

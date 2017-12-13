@@ -73,7 +73,7 @@ void fastMatchTemplate(cv::Mat& srca,  // The reference image
 	res.copyTo(dst);
 }
 
-TemplateMatching::TemplateMatching(Mat image, vector<Mat>template_list)
+TemplateMatching::TemplateMatching(Mat image, vector<Mat>template_list, double maxVal)
 {
 	for (int i = 0; i < 16; i++)
 	{
@@ -90,7 +90,7 @@ TemplateMatching::TemplateMatching(Mat image, vector<Mat>template_list)
 			cv::Point minloc, maxloc;
 			cv::minMaxLoc(dst, &minval, &maxval, &minloc, &maxloc);
 
-			if (maxval >= 0.93){
+			if (maxval >= maxVal){
 				cv::rectangle(
 					image, maxloc,
 					cv::Point(maxloc.x + template_list[i].cols, maxloc.y + template_list[i].rows),

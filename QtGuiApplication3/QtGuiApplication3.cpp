@@ -10,7 +10,7 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 {
 	QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
 	QMovie *female00 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/female0.gif");
-	QMovie *background = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/FinalBackground1.png");
+	QMovie *background = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/FinalBackground3.png");
 	QMovie *male00 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/male0.gif");
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(UpdateP1Lvl()));
@@ -30,10 +30,10 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 	ui.background->setMovie(background);
 	background->start();
 
-	timer->start(50);
-	timer1->start(6000);
-	timer2->start(3000);
-	QTimer::singleShot(7000, this, SLOT(showFullScreen()));
+	timer->start(200);
+	timer1->start(3500);
+	timer2->start(2500);
+	QTimer::singleShot(4000, this, SLOT(showFullScreen()));
 }
 
 	void QtGuiApplication3::UpdateP1Lvl() {
@@ -46,7 +46,6 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		classP1 = ipRef.classPlayedP1;
 		classP2 = ipRef.classPlayedP2;
 		turn = ipRef.turn;
-		nextTurn = ipRef.nextTurn;
 		itemsP1 = ipRef.itemsP1;
 		itemsP2 = ipRef.itemsP2;
 		badStuff = ipRef.badStuff;
@@ -54,64 +53,89 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 
 		QMovie *p1wins = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/p1wins.png");
 		QMovie *p2wins = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/p2wins.png");
+		QMovie *mBackgroundT1 = new QMovie(":/Pictures/GUI_Pics/GifBackground90c.png");
+		QMovie *mBackgroundT2 = new QMovie(":/Pictures/GUI_Pics/GifBackgroundcc.png");
+
+		
 
 		QString qsP1lvl = QString::number(p1Lvl);
 		QPicture p1_lvl;
 		drawtext(qsP1lvl, 90, p1_lvl);
+		ui.p1_lvl->clear();
 		ui.p1_lvl->setPicture(p1_lvl);
 
 		QString qsP1attack = QString::number(p1Attack);
 		QPicture p1_attack;
 		drawtext(qsP1attack, 90, p1_attack);
+		ui.p1_attack->clear();
 		ui.p1_attack->setPicture(p1_attack);
 
 		int p1total = p1Lvl + p1Attack;
 		QString qsP1total = QString::number(p1total);
 		QPicture p1_total;
 		drawtext(qsP1total, 90, p1_total);
+		ui.p1_total->clear();
 		ui.p1_total->setPicture(p1_total);
 
 		QString qsP2lvl = QString::number(p2Lvl);
 		QPicture p2_lvl;
 		drawtext(qsP2lvl, -90, p2_lvl);
+		ui.p2_lvl->clear();
 		ui.p2_lvl->setPicture(p2_lvl);
 
 		QString qsP2attack = QString::number(p2Attack);
 		QPicture p2_attack;
 		drawtext(qsP2attack, -90, p2_attack);
+		ui.p2_attack->clear();
 		ui.p2_attack->setPicture(p2_attack);
 
 		int p2total = p2Lvl + p2Attack;
 		QString qsP2total = QString::number(p2total);
 		QPicture p2_total;
 		drawtext(qsP2total, -90, p2_total);
+		ui.p2_total->clear();
 		ui.p2_total->setPicture(p2_total);
 
 		QString qsM1lvl = QString::number(monsLvl);
 		QPicture m1_lvl;
 		drawtext(qsM1lvl, 90, m1_lvl);
+		ui.m_lvl1->clear();
 		ui.m_lvl1->setPicture(m1_lvl);
 
 		QPicture m2_lvl;
 		drawtext(qsM1lvl, -90, m2_lvl);
+		ui.m_lvl2->clear();
 		ui.m_lvl2->setPicture(m2_lvl);
 
 		QString mBadstuff = QString::fromStdString(badStuff);
 		QPicture m_bs;
 		drawtext1(mBadstuff, 90, m_bs);
+		ui.p1_badstuff->clear();
 		ui.p1_badstuff->setPicture(m_bs);
 
 		QPicture m_bs1;
 		drawtext1(mBadstuff, -90, m_bs1);
+		ui.p2_badstuff->clear();
 		ui.p2_badstuff->setPicture(m_bs1);
 
+	
 		if (gameOver == 1){
-			ui.m_background->setMovie(p1wins);
+			ui.monster_gif->setMovie(p1wins);
 			p1wins->start();
 		}
 		if (gameOver == 2){
-			ui.m_background->setMovie(p2wins);
+			ui.monster_gif->setMovie(p2wins);
 			p2wins->start();
+		}
+
+		switch (turn){
+		case 1:
+			ui.m_background->setMovie(mBackgroundT1);
+			mBackgroundT1->start(); break;
+
+		case 2:
+			ui.m_background->setMovie(mBackgroundT2);
+			mBackgroundT2->start(); break;
 		}
 	}
 
@@ -126,22 +150,12 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		QMovie *nextTurnP1 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/next_turnP1.png");
 		QMovie *nextTurnP2 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/next_turnP2.png");
 		QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
-		QMovie *mBackgroundT1 = new QMovie(":/Pictures/GUI_Pics/GifBackground90c.png");
-		QMovie *mBackgroundT2 = new QMovie(":/Pictures/GUI_Pics/GifBackgroundcc.png");
 		QMovie *dragonC = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/dragonc.gif");
 		QMovie *dragonCC = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/dragoncc.gif");
 		QMovie *evil_potC = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/evil_potc.gif");
 		QMovie *evil_potCC = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/evil_potcc.gif");
 
-		switch (turn){
-		case 1:
-			ui.m_background->setMovie(mBackgroundT1);
-			mBackgroundT1->start(); break;
-
-		case 2: 
-			ui.m_background->setMovie(mBackgroundT2);
-			mBackgroundT2->start(); break;
-		}
+		
 
 		//cases for what monster is in play 
 		switch (monsterPlayed){
@@ -196,24 +210,6 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 			dragonCC->start(); break;
 		} break;
 		}
-
-		switch (turn){
-		case 1: if (nextTurn == true){
-				ui.monster_gif->setMovie(nextTurnP1);
-				nextTurnP1->start();
-			} if (nextTurn == false){
-			ui.monster_gif->setMovie(empty);
-			empty->start();
-			}	break;
-
-		case 2: if (nextTurn == true){
-				ui.monster_gif->setMovie(nextTurnP2);
-				nextTurnP2->start();
-			} if (nextTurn == false){
-			ui.monster_gif->setMovie(empty);
-			empty->start();
-			}	break;
-		}
 	}
 
 	void QtGuiApplication3::UpdateClass(){
@@ -265,6 +261,8 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 		QMovie *monkey_male3 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/monkey_male3.gif");
 		QMovie *monkey_male4 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/monkey_male4.gif");
 		QMovie *monkey_male5 = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/monkey_male5.gif");
+
+		
 
 		//cases for which class is in play + item p1
 		switch (classP1){
