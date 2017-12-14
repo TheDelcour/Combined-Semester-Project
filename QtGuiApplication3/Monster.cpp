@@ -7,13 +7,13 @@ Monster::Monster(int monsterPlayed)
 {
 	switch (monsterPlayed) {
 	case 0: MonName = ""; mAttack = 0; mBadStuff = ""; break;
-	case 1: MonName = "Cardboard Man"; mAttack = 5; mBadStuff = "Lose 1 gear item"; break;
-	case 2: MonName = "Angry German"; mAttack = 7; mBadStuff = "Lose 1 extra level"; break;
-	case 3: MonName = "Plant";  mAttack = 2; mBadStuff = "Lose your class"; break;
-	case 4: MonName = "Dragon"; mAttack = 10; mBadStuff = "Lose 1 inv item"; break;
-	case 5: MonName = "Raging German"; mAttack = 12; mBadStuff = "Lose 1 extra level"; break;
+	case 1: MonName = "evil pot"; mAttack = 2; mBadStuff = "Lose your class"; break;
+	case 2: MonName = "Angry German"; mAttack = 5; mBadStuff = "Lose 1 gear item"; break;
+	case 3: MonName = "lizard";  mAttack = 7; mBadStuff = "Lose 1 gear item"; break;
+	case 4: MonName = "Dragon"; mAttack = 10; mBadStuff = "Lose 1 inventory item"; break;
+	case 5: MonName = "Raging German"; mAttack = 12; mBadStuff = "Lose 2 inventory items"; break;
 	case 6: MonName = "Huge Lizard"; mAttack = 15, mBadStuff = "Lose 2 gear items"; break;
-	case 7: MonName = "Elemental lord of cardboards"; mAttack = 19; mBadStuff = "Lose your inv"; break;
+	case 7: MonName = "Elemental lord of cardboards"; mAttack = 19; mBadStuff = "Lose your inventory"; break;
 	case 8: MonName = "Plant"; mAttack = 23; mBadStuff = "YOU DIE"; break;
 	}
 }
