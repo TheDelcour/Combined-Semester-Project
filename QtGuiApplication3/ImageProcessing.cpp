@@ -62,6 +62,7 @@ void ImageProcessing::ImageProcessing1(){
 		cvtColor(im2, im3, CV_BGR2GRAY);
 		GaussianBlur(im3, im, Size(15, 15), 3, 3);
 
+
 		Mat img = im;
 		Mat img2 = im;
 		Mat img3 = im;
@@ -85,9 +86,9 @@ void ImageProcessing::ImageProcessing1(){
 		Rect gear1P1(282, 492, 120, 220);
 		Rect gearP2(878, 10, 120, 220); //top right
 		Rect gear1P2(999, 10, 120, 220);
-		Rect classP1(1, 487, 160, 100); //left
+		Rect classP1(7, 494, 160, 100); //left
 		Rect classP2(1119, 480, 160, 100); //right
-		Rect monsterP1(1, 130, 160, 100); //left
+		Rect monsterP1(7, 137, 160, 100); //left
 		Rect monsterP2(1119, 115, 160, 100); //right
 		Rect munchkinP1(442, 6, 160, 220);//top
 		Rect munchkinP2(666, 5, 160, 220);
@@ -96,9 +97,9 @@ void ImageProcessing::ImageProcessing1(){
 		Rect r(254, 254, 64, 100);//Turn
 		Rect r2(254, 370, 64, 100);//Fight
 		Rect r3(216, 386, 36, 65);//Run
-		Rect r4(973, 240, 64, 100);//fight p2
-		Rect r5(973, 350, 64, 100);//turn p2
-		Rect r6(1039, 255, 36, 65);//Run p2
+		Rect r4(983, 240, 64, 100);//fight p2
+		Rect r5(983, 350, 64, 100);//turn p2
+		Rect r6(1049, 255, 36, 65);//Run p2
 
 
 		Mat roiGearP1(img(gearP1));
@@ -120,24 +121,24 @@ void ImageProcessing::ImageProcessing1(){
 		Mat roi3b5(img15(r5)); //turn p2
 		Mat roi3b6(img16(r6)); //run p2
 
-		Seperation sepGearP1 = Seperation(roiGearP1, 54);//Checked
-		Seperation sepGear1P1 = Seperation(roiGear1P1, 54);//Checked
+		Seperation sepGearP1 = Seperation(roiGearP1, 55);//Checked
+		Seperation sepGear1P1 = Seperation(roiGear1P1, 55);//Checked
 		Seperation sepGearP2 = Seperation(roiGearP2, 53);//Checked
 		Seperation sepGear1P2 = Seperation(roiGear1P2, 40);//Checked
 		Seperation sepMonsterP1 = Seperation(roiClassP1, 44);//Checked
 		Seperation sepMonsterP2 = Seperation(roiClassP2, 42);//Checked
 		Seperation sepClassP1 = Seperation(roiMonsterP1, 53);//Checked
 		Seperation sepClassP2 = Seperation(roiMonsterP2, 38);//Checked
-		Seperation sepMunchkinP1 = Seperation(roiMunchkinP1, 100);//Checked
+		Seperation sepMunchkinP1 = Seperation(roiMunchkinP1, 115);//Checked
 		Seperation sepMunchkinP2 = Seperation(roiMonster1P2, 50);//Checked
 		Seperation sepMonster1P1 = Seperation(roiMonster1P1, 61); //Player 2 & Monster //Checked
 		Seperation sepMonster1P2 = Seperation(roiMunchkinP2, 80); //Player 2 & Monster segment //Checked
-		Seperation sepBlobDetect = Seperation(roi3b, 60);
-		Seperation sepBlobDetect2 = Seperation(roi3b2, 60);
+		Seperation sepBlobDetect = Seperation(roi3b, 70);
+		Seperation sepBlobDetect2 = Seperation(roi3b2, 64);
 		Seperation sepBlobDetect3 = Seperation(roi3b3, 50);
-		Seperation sepBlobDetect4 = Seperation(roi3b4, 60);
-		Seperation sepBlobDetect5 = Seperation(roi3b5, 60);
-		Seperation sepBlobDetect6 = Seperation(roi3b6, 55);
+		Seperation sepBlobDetect4 = Seperation(roi3b4, 50);
+		Seperation sepBlobDetect5 = Seperation(roi3b5, 55);
+		Seperation sepBlobDetect6 = Seperation(roi3b6, 45);
 
 		blobDetection blobDetect = blobDetection(sepBlobDetect.sepIm, 58, 100);
 		blobDetection blobDetect2 = blobDetection(sepBlobDetect2.sepIm, 58, 100);
@@ -147,8 +148,8 @@ void ImageProcessing::ImageProcessing1(){
 		blobDetection blobDetect5 = blobDetection(sepBlobDetect5.sepIm, 58, 100);
 		blobDetection blobDetect6 = blobDetection(sepBlobDetect6.sepIm, 32, 65);
 
-		TemplateMatching tempGearP1 = TemplateMatching(sepGearP1.sepIm, List_Template_Pool1, 0.94);
-		TemplateMatching tempGear1P1 = TemplateMatching(sepGear1P1.sepIm, List_Template_Pool1, 0.94);
+		TemplateMatching tempGearP1 = TemplateMatching(sepGearP1.sepIm, List_Template_Pool1, 0.93);
+		TemplateMatching tempGear1P1 = TemplateMatching(sepGear1P1.sepIm, List_Template_Pool1, 0.93);
 		TemplateMatching tempGearP2 = TemplateMatching(sepGearP2.sepIm, List_Template_Pool2, 0.95);
 		TemplateMatching tempGear1P2 = TemplateMatching(sepGear1P2.sepIm, List_Template_Pool2, 0.946);
 		TemplateMatching tempClassP1 = TemplateMatching(sepClassP1.sepIm, List_Template_Pool1, 0.93);
@@ -160,6 +161,8 @@ void ImageProcessing::ImageProcessing1(){
 		TemplateMatching tempMonster1P1 = TemplateMatching(sepMonster1P1.sepIm, List_Template_Pool1, 0.94);
 		TemplateMatching tempMonster1P2 = TemplateMatching(sepMonster1P2.sepIm, List_Template_Pool2, 0.94);
 
+		
+
 		//set caps for lvl
 		if (player1.getLvl() < 0){
 			player1.setLvl(0);
@@ -168,6 +171,14 @@ void ImageProcessing::ImageProcessing1(){
 		if (player1.getLvl() > 10){
 			player1.setLvl(10);
 			p1Lvl = player1.getLvl();
+		}
+		if (player2.getLvl() < 0){
+			player2.setLvl(0);
+			p2Lvl = player2.getLvl();
+		}
+		if (player2.getLvl() > 10){
+			player2.setLvl(10);
+			p2Lvl = player2.getLvl();
 		}
 
 		//set variable values for the GUI 
@@ -180,7 +191,7 @@ void ImageProcessing::ImageProcessing1(){
 		p2Attack = player2.getAttack();
 		p2Lvl = player2.getLvl();
 
-		
+
 		//decide what monster zone decides monster played 
 		if (turn == 1){
 			monsterPlayed = monster1.ExtractMonsterTemplateId(tempMonsterP1);
@@ -200,42 +211,42 @@ void ImageProcessing::ImageProcessing1(){
 		classPlayedP2 = monster1.ExtractClassTemplateId(tempClassP2);
 
 		//decides how many items the class has for p1
-		if (player1.getAttack() < 3){
-			itemsP1 = 0;
+		if (player1.getAttack() < 1){
+			itemsP1 = 0; 
 		}
-		if (player1.getAttack() >3 && player1.getAttack()<6){
+		if (player1.getAttack() >=1 && player1.getAttack()<3){
 			itemsP1 = 1;
 		}
-		if (player1.getAttack() >6 && player1.getAttack()<9){
+		if (player1.getAttack() >3 && player1.getAttack()<7){
 			itemsP1 = 2;
 		}
-		if (player1.getAttack() >9 && player1.getAttack()<12){
+		if (player1.getAttack() >7 && player1.getAttack()<12){
 			itemsP1 = 3;
 		}
-		if (player1.getAttack() >12 && player1.getAttack()<15){
+		if (player1.getAttack() >12 && player1.getAttack()<17){
 			itemsP1 = 4;
 		}
-		if (player1.getAttack() >15){
+		if (player1.getAttack() >17){
 			itemsP1 = 5;
 		}
 
 		//decides how many items the class has for p1
-		if (player2.getAttack() < 3){
+		if (player2.getAttack() < 1){
 			itemsP2 = 0;
 		}
-		if (player2.getAttack() >3 && player2.getAttack()<6){
+		if (player2.getAttack() >=1 && player2.getAttack()<3){
 			itemsP2 = 1;
 		}
-		if (player2.getAttack() >6 && player2.getAttack()<9){
+		if (player2.getAttack() >3 && player2.getAttack()<7){
 			itemsP2 = 2;
 		}
-		if (player2.getAttack() >9 && player2.getAttack()<12){
+		if (player2.getAttack() >7 && player2.getAttack()<12){
 			itemsP2 = 3;
 		}
-		if (player2.getAttack() >12 && player2.getAttack()<15){
+		if (player2.getAttack() >12 && player2.getAttack()<17){
 			itemsP2 = 4;
 		}
-		if (player2.getAttack() >15){
+		if (player2.getAttack() >17){
 			itemsP2 = 5;
 		}
 

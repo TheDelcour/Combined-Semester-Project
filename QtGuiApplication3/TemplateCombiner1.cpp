@@ -10,11 +10,11 @@ int TemplateCombiner1::GetAttackFromGear(TemplateMatching gear){
 	{
 		if (gear.temp[i]) {
 			switch (i) {
-			case 0: attack += 3; break;
-			case 1: attack += 2; break;
 			case 2: attack += 1; break;
-			case 3: attack += 5; break;
-			case 4: attack += 7; break;
+			case 3: attack += 2; break;
+			case 4: attack += 3; break;
+			case 5: attack += 5; break;
+			case 6: attack += 7; break;
 			}
 		}
 	}
@@ -27,14 +27,10 @@ int TemplateCombiner1::GetAttackFromBuffs(TemplateMatching buffs){
 	{
 		if (buffs.temp[i]) {
 			switch (i) {
-			case 0: attack += 3; break;
-			case 1: attack -= 3; break;
-			case 2: attack -= 5; break;
-			case 3: attack += 5; break;
-			case 4: attack += 7; break;
-			case 5: attack += 3; break;
-			case 6: attack -= 3; break;
-			case 7: attack -= 5; break;
+			case 0: attack += 2; break;
+			case 1: attack += 5; break;
+			case 3: attack -= 2; break;
+			case 6: attack -= 5; break;
 			}
 		}
 	}

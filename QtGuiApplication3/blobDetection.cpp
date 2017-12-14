@@ -31,7 +31,7 @@ blobDetection::blobDetection(Mat image, int x2, int y2)
 
 	// Filter by Circularity
 	params.filterByCircularity = true;
-	params.minCircularity = 0.1;
+	params.minCircularity = 0.5;
 
 	// Filter by Convexity
 	params.filterByConvexity = true;
