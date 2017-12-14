@@ -15,12 +15,12 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 
 	ui.setupUi(this);
 
-	ui.p1_avatar->setMovie(female00);
-	female00->start();
+	ui.p1_avatar->setMovie(female0);
+	female0->start();
 	ui.monster_gif->setMovie(empty);
 	empty->start();
-	ui.p2_avatar->setMovie(male00);
-	male00->start();
+	ui.p2_avatar->setMovie(male0);
+	male0->start();
 	ui.background->setMovie(background);
 	background->start();
 
@@ -168,10 +168,10 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 			cardboard_manCC->start(); break;
 		} break;
 		case 6: switch (turn){
-		case 1: ui.monster_gif->setMovie(evil_potC);
-			evil_potC->start(); break;
-		case 2: ui.monster_gif->setMovie(evil_potCC);
-			evil_potCC->start(); break;
+		case 1: ui.monster_gif->setMovie(dragonC);
+			dragonC->start(); break;
+		case 2: ui.monster_gif->setMovie(dragonCC);
+			dragonCC->start(); break;
 		} break;
 		case 7: switch (turn){
 		case 1: ui.monster_gif->setMovie(cardboard_manC);
@@ -180,10 +180,10 @@ QtGuiApplication3::QtGuiApplication3(QWidget *parent)
 			cardboard_manCC->start(); break;
 		} break;
 		case 8: switch (turn){
-		case 1: ui.monster_gif->setMovie(dragonC);
-			dragonC->start(); break;
-		case 2: ui.monster_gif->setMovie(dragonCC);
-			dragonCC->start(); break;
+		case 1: ui.monster_gif->setMovie(evil_potC);
+			evil_potC->start(); break;
+		case 2: ui.monster_gif->setMovie(evil_potCC);
+			evil_potCC->start(); break;
 		} break;
 		}
 		/*delete cardboard_manC;

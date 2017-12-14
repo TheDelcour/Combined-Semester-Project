@@ -217,16 +217,16 @@ void ImageProcessing::ImageProcessing1(){
 		if (player1.getAttack() >=1 && player1.getAttack()<3){
 			itemsP1 = 1;
 		}
-		if (player1.getAttack() >3 && player1.getAttack()<7){
+		if (player1.getAttack() >=3 && player1.getAttack()<7){
 			itemsP1 = 2;
 		}
-		if (player1.getAttack() >7 && player1.getAttack()<12){
+		if (player1.getAttack() >=7 && player1.getAttack()<12){
 			itemsP1 = 3;
 		}
-		if (player1.getAttack() >12 && player1.getAttack()<17){
+		if (player1.getAttack() >=12 && player1.getAttack()<17){
 			itemsP1 = 4;
 		}
-		if (player1.getAttack() >17){
+		if (player1.getAttack() >=17){
 			itemsP1 = 5;
 		}
 
@@ -237,16 +237,16 @@ void ImageProcessing::ImageProcessing1(){
 		if (player2.getAttack() >=1 && player2.getAttack()<3){
 			itemsP2 = 1;
 		}
-		if (player2.getAttack() >3 && player2.getAttack()<7){
+		if (player2.getAttack() >=3 && player2.getAttack()<7){
 			itemsP2 = 2;
 		}
-		if (player2.getAttack() >7 && player2.getAttack()<12){
+		if (player2.getAttack() >=7 && player2.getAttack()<12){
 			itemsP2 = 3;
 		}
-		if (player2.getAttack() >12 && player2.getAttack()<17){
+		if (player2.getAttack() >=12 && player2.getAttack()<17){
 			itemsP2 = 4;
 		}
-		if (player2.getAttack() >17){
+		if (player2.getAttack() >=17){
 			itemsP2 = 5;
 		}
 

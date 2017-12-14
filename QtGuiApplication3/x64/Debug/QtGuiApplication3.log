@@ -1,4 +1,4 @@
-﻿Build started 14-12-2017 14:36:55.
+﻿Build started 14-12-2017 16:31:21.
      1>Project "C:\Users\Tobia\OneDrive\Dokumenter\Visual Studio 2013\Projects\QtGuiApplication3\QtGuiApplication3\QtGuiApplication3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Program Files\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\Ceemple\OpenCV4VS\include /I.\GeneratedFiles /I. /IE:\ProgramFiles\qt1\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /IE:\ProgramFiles\qt1\5.8\msvc2013_64\include\QtCore /IE:\ProgramFiles\qt1\5.8\msvc2013_64\include\QtGui /IE:\ProgramFiles\qt1\5.8\msvc2013_64\include\QtWidgets /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt ImageProcessing.cpp
@@ -22,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.55
+Time Elapsed 00:00:00.97
