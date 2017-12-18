@@ -26,16 +26,16 @@ blobDetection::blobDetection(Mat image, int x2, int y2)
 
 	// Filter by Area.
 	params.filterByArea = true;
-	params.minArea = 100;
-	params.maxArea = 600;
+	params.minArea = 0.1;
+	params.maxArea = 400;
 
 	// Filter by Circularity
 	params.filterByCircularity = true;
-	params.minCircularity = 0.5;
+	params.minCircularity = 0.4;
 
 	// Filter by Convexity
 	params.filterByConvexity = true;
-	params.minConvexity = 0.87;
+	params.minConvexity = 0.8;
 
 	// Filter by Inertia
 	params.filterByInertia = true;

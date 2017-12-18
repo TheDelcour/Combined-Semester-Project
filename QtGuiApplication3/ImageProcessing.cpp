@@ -92,7 +92,7 @@ void ImageProcessing::ImageProcessing1(){
 		Rect monsterP2(1119, 115, 160, 100); //right
 		Rect munchkinP1(442, 6, 160, 220);//top
 		Rect munchkinP2(666, 5, 160, 220);
-		Rect monster1P1(442, 500, 160, 220); //bottom
+		Rect monster1P1(442, 495, 160, 220); //bottom
 		Rect monster1P2(685, 495, 160, 220);
 		Rect r(254, 254, 64, 100);//Turn
 		Rect r2(254, 370, 64, 100);//Fight
@@ -123,22 +123,22 @@ void ImageProcessing::ImageProcessing1(){
 
 		Seperation sepGearP1 = Seperation(roiGearP1, 55);//Checked
 		Seperation sepGear1P1 = Seperation(roiGear1P1, 55);//Checked
-		Seperation sepGearP2 = Seperation(roiGearP2, 53);//Checked
-		Seperation sepGear1P2 = Seperation(roiGear1P2, 40);//Checked
-		Seperation sepMonsterP1 = Seperation(roiClassP1, 44);//Checked
+		Seperation sepGearP2 = Seperation(roiGearP2, 57);//Checked
+		Seperation sepGear1P2 = Seperation(roiGear1P2, 48);//Checked
+		Seperation sepMonsterP1 = Seperation(roiClassP1, 47);//Checked
 		Seperation sepMonsterP2 = Seperation(roiClassP2, 42);//Checked
-		Seperation sepClassP1 = Seperation(roiMonsterP1, 53);//Checked
+		Seperation sepClassP1 = Seperation(roiMonsterP1, 50);//Checked
 		Seperation sepClassP2 = Seperation(roiMonsterP2, 38);//Checked
-		Seperation sepMunchkinP1 = Seperation(roiMunchkinP1, 115);//Checked
-		Seperation sepMunchkinP2 = Seperation(roiMonster1P2, 50);//Checked
-		Seperation sepMonster1P1 = Seperation(roiMonster1P1, 61); //Player 2 & Monster //Checked
-		Seperation sepMonster1P2 = Seperation(roiMunchkinP2, 80); //Player 2 & Monster segment //Checked
-		Seperation sepBlobDetect = Seperation(roi3b, 70);
-		Seperation sepBlobDetect2 = Seperation(roi3b2, 64);
-		Seperation sepBlobDetect3 = Seperation(roi3b3, 50);
-		Seperation sepBlobDetect4 = Seperation(roi3b4, 50);
-		Seperation sepBlobDetect5 = Seperation(roi3b5, 55);
-		Seperation sepBlobDetect6 = Seperation(roi3b6, 45);
+		Seperation sepMunchkinP1 = Seperation(roiMunchkinP1, 108);//Checked
+		Seperation sepMunchkinP2 = Seperation(roiMonster1P2, 59);//Checked
+		Seperation sepMonster1P1 = Seperation(roiMonster1P1, 65); //Player 2 & Monster //Checked
+		Seperation sepMonster1P2 = Seperation(roiMunchkinP2, 78); //Player 2 & Monster segment //Checked
+		Seperation sepBlobDetect = Seperation(roi3b, 75);
+		Seperation sepBlobDetect2 = Seperation(roi3b2, 60);
+		Seperation sepBlobDetect3 = Seperation(roi3b3, 56);
+		Seperation sepBlobDetect4 = Seperation(roi3b4, 42);
+		Seperation sepBlobDetect5 = Seperation(roi3b5, 70);
+		Seperation sepBlobDetect6 = Seperation(roi3b6, 42);
 
 		blobDetection blobDetect = blobDetection(sepBlobDetect.sepIm, 58, 100);
 		blobDetection blobDetect2 = blobDetection(sepBlobDetect2.sepIm, 58, 100);
@@ -148,18 +148,18 @@ void ImageProcessing::ImageProcessing1(){
 		blobDetection blobDetect5 = blobDetection(sepBlobDetect5.sepIm, 58, 100);
 		blobDetection blobDetect6 = blobDetection(sepBlobDetect6.sepIm, 32, 65);
 
-		TemplateMatching tempGearP1 = TemplateMatching(sepGearP1.sepIm, List_Template_Pool1, 0.93);
-		TemplateMatching tempGear1P1 = TemplateMatching(sepGear1P1.sepIm, List_Template_Pool1, 0.93);
-		TemplateMatching tempGearP2 = TemplateMatching(sepGearP2.sepIm, List_Template_Pool2, 0.95);
-		TemplateMatching tempGear1P2 = TemplateMatching(sepGear1P2.sepIm, List_Template_Pool2, 0.946);
+		TemplateMatching tempGearP1 = TemplateMatching(sepGearP1.sepIm, List_Template_Pool1, 0.925);
+		TemplateMatching tempGear1P1 = TemplateMatching(sepGear1P1.sepIm, List_Template_Pool1, 0.925);
+		TemplateMatching tempGearP2 = TemplateMatching(sepGearP2.sepIm, List_Template_Pool2, 0.925);
+		TemplateMatching tempGear1P2 = TemplateMatching(sepGear1P2.sepIm, List_Template_Pool2, 0.935);
 		TemplateMatching tempClassP1 = TemplateMatching(sepClassP1.sepIm, List_Template_Pool1, 0.93);
 		TemplateMatching tempClassP2 = TemplateMatching(sepClassP2.sepIm, List_Template_Pool2, 0.95);
-		TemplateMatching tempMonsterP1 = TemplateMatching(sepMonsterP1.sepIm, List_Template_Pool1, 0.94);
+		TemplateMatching tempMonsterP1 = TemplateMatching(sepMonsterP1.sepIm, List_Template_Pool1, 0.935);
 		TemplateMatching tempMonsterP2 = TemplateMatching(sepMonsterP2.sepIm, List_Template_Pool2, 0.947);
-		TemplateMatching tempMunckinP1 = TemplateMatching(sepMunchkinP1.sepIm, List_Template_Pool1, 0.94);
+		TemplateMatching tempMunckinP1 = TemplateMatching(sepMunchkinP1.sepIm, List_Template_Pool1, 0.935);
 		TemplateMatching tempMunckinP2 = TemplateMatching(sepMunchkinP2.sepIm, List_Template_Pool2, 0.94);
-		TemplateMatching tempMonster1P1 = TemplateMatching(sepMonster1P1.sepIm, List_Template_Pool1, 0.94);
-		TemplateMatching tempMonster1P2 = TemplateMatching(sepMonster1P2.sepIm, List_Template_Pool2, 0.94);
+		TemplateMatching tempMonster1P1 = TemplateMatching(sepMonster1P1.sepIm, List_Template_Pool1, 0.93);//middle
+		TemplateMatching tempMonster1P2 = TemplateMatching(sepMonster1P2.sepIm, List_Template_Pool2, 0.925);
 
 		
 

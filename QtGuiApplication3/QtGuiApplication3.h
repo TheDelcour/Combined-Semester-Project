@@ -75,7 +75,7 @@ private:
 	QMovie *evil_potC = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/evil_potc.gif");
 	QMovie *evil_potCC = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/evil_potcc.gif");
 	QMovie *empty = new QMovie(":/Pictures/GUI_Pics/empty.png");
-	QMovie *background = new QMovie("C:/Users/Tobia/OneDrive/P3 Group folder/Design and GUI drawings/FinalBackground5.png");
+	QMovie *background = new QMovie("C:/Users/Tobia/OneDrive/P3 Group folder/Design and GUI drawings/FinalBackground6.png");
 	QMovie *p1wins = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/p1wins.png");
 	QMovie *p2wins = new QMovie("C:/Users/Tobia/OneDrive/Dokumenter/Visual Studio 2013/Projects/QtGuiApplication3/QtGuiApplication3/GUI_Pics/p2wins.png");
 	QMovie *mBackgroundT1 = new QMovie(":/Pictures/GUI_Pics/GifBackground90c.png");
